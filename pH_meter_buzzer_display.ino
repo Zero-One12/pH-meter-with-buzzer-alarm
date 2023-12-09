@@ -6,7 +6,7 @@
 #define SerialMonitor 9600
 
 LiquidCrystal_I2C lcd(0x27, 16, 2); // Alamat I2C untuk LCD
-
+//created by mgk012/Zero_One
 
 void setup() {
   pinMode(buzzerPin, OUTPUT);
@@ -15,7 +15,7 @@ void setup() {
   lcd.setCursor(0, 0);
   lcd.print(" pH Meter Alarm");
   lcd.setCursor(0, 1);
-  lcd.print("   PT. PECU");
+  lcd.print("Zero_One");
   delay(5000);
   lcd.clear();
   Serial.begin(9600);
@@ -36,7 +36,7 @@ void loop() {
     lcd.setCursor(  0, 1);
     lcd.print("Harus Di Reject");
     Serial.println(pHValue);
-    triggerAlarm(1); // Memicu alarm pH minimum
+    triggerAlarm(1); // Memicu alarm 
   } else if (pHValue >= 5.20 && pHValue < 5.35) {
     lcd.setCursor(0, 1);
     lcd.print(" pH Layak (Kritis!)");
@@ -46,7 +46,7 @@ void loop() {
     lcd.setCursor(0, 1);
     lcd.print(" pH Baik");
     Serial.println(pHValue);
-    //triggerAlarm(1); // Memicu alarm
+    //triggerAlarm(); // Memicu alarm
   } else if (pHValue >= 6.00 && pHValue < 7.00) {
     lcd.setCursor(  0, 1);
     lcd.print(" pH Tinggi");
@@ -61,14 +61,14 @@ void triggerAlarm(int alarmType) {
   if (alarmType == 1) {
     tone(buzzerPin, 2000);
     delay(10000);
-    noTone(buzzerPin); // Frekuensi buzzer untuk pH netral
+    noTone(buzzerPin); // Frekuensi buzzer untuk pH < 5.19
   } else if (alarmType == 2) {
     tone(buzzerPin, 3000);
-    delay(200); // Frekuensi buzzer untuk pH basa
+    delay(200); // Frekuensi buzzer untuk pH >= 5.20 - < 5.35
     noTone(buzzerPin);
   } else if (alarmType == 3) {
     tone(buzzerPin, 3000);
-    delay(500); // Frekuensi buzzer untuk pH basa
+    delay(500); // Frekuensi buzzer untuk pH >= 6.00 - < 7.00
     noTone(buzzerPin);
   }
 }

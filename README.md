@@ -1,2 +1,4 @@
 # pH-meter-with-buzzer-alarm
-Arduino R3 pH meter with display, buzzer
+Specification: > Arduino R3
+               > Sensor pH Meter
+               > Buzzer Alarm

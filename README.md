@@ -71,13 +71,5 @@ a device that can not only monitor network traffic but also scan for nearby Wi-F
 
 B4ck_D00rs - [@Insragram](https://www.instagram.com/b4ck_d00rs/)
 
-Project Link: ([https://github.com/cifertech/ESP32-DIV](https://github.com/Zero-One12/pH-meter-with-buzzer-alarm))
-
-<!-- Acknowledgments -->
-## :gem: Acknowledgements 
-
- - [802.11 Mgmt:Beacon Frame](https://mrncciew.com/2014/10/08/802-11-mgmt-beacon-frame/)
- - [spacehuhn](https://github.com/spacehuhn)
- - [HCScreen](https://github.com/GerLech/HCScreen/tree/master)
- 
+Project Link: ([https://github.com/Zero-One12/pH-meter-with-buzzer-alarm])
  
